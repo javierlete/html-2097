@@ -1,3 +1,7 @@
+# Ver página online
+
+- https://javierlete.github.io/html-2097/BASICOS/
+
 # General
 
 - FreeCodeCamp: https://www.freecodecamp.org/espanol/

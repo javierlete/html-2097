@@ -17,3 +17,7 @@
 
 - Referencia: https://www.w3.org/TR/CSS/
 - CSS Zen Garden: https://csszengarden.com/
+
+## Ejercicios
+
+- CSS Dinner: https://flukeout.github.io/

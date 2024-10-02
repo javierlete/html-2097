@@ -1,3 +1,7 @@
+/* TIPOS DE LETRA */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+
 /* VARIABLES */
 
 :root {
@@ -7,8 +11,9 @@
     --suave: lightgray;
     --medio: gray;
 
-    --letra: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --titulo: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --letra: "Nunito Sans", sans-serif;
+    --titulo: "Bungee Tint", sans-serif;
+    --codigo: "Kode Mono", monospace;
 
     --espaciado: 0.5rem;
 
@@ -36,6 +41,10 @@ h4,
 h5,
 h6 {
     font-family: var(--titulo);
+}
+
+pre, input[type=date], input[type=datetime-local], input[type=time], input[type=week], input[type=month] {
+    font-family: var(--codigo);
 }
 
 p {

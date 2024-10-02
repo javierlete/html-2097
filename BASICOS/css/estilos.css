@@ -50,7 +50,9 @@ table {
     border-collapse: collapse;
 }
 
-img, audio, video {
+img,
+audio,
+video {
     width: 100%;
 
     margin: 1rem 0;
@@ -78,7 +80,7 @@ img, audio, video {
     position: absolute;
 
     border: 0;
-    
+
     top: 0;
     left: 0;
     width: 100%;
@@ -88,7 +90,8 @@ img, audio, video {
 /* TÍTULO, MENÚ PRINCIPAL Y PIE */
 
 h1,
-body>nav ul, footer {
+body>nav ul,
+footer {
     background-color: black;
     color: white;
 
@@ -107,7 +110,7 @@ body>nav a {
     display: inline-block;
     color: white;
 
-     padding: 0.5rem;
+    padding: 0.5rem;
 
     width: 100%;
 }
@@ -129,23 +132,30 @@ tr:nth-child(even) {
     background-color: lightgray
 }
 
-th, td {
+th,
+td {
     border: 1px solid gray;
 
     padding: 0.5rem;
 }
 
-th:first-child, td:first-child {
+th:first-child,
+td:first-child {
     text-align: end;
 }
 
-th:not(:first-child), td:not(:first-child) {
+th:not(:first-child),
+td:not(:first-child) {
     text-align: start;
 }
 
 /* FORMULARIOS */
 
-fieldset, input, button, textarea, select {
+fieldset,
+input,
+button,
+textarea,
+select {
     border: 1px solid lightgray;
 
     border-radius: 0.25rem;
@@ -153,7 +163,7 @@ fieldset, input, button, textarea, select {
     padding: 0.25rem;
 
     width: 100%;
-    
+
     margin: 0.5rem 0;
 }
 
@@ -161,7 +171,9 @@ fieldset {
     padding: 0.5rem;
 }
 
-button, input[type=submit], input[type=reset] {
+button,
+input[type=submit],
+input[type=reset] {
     background-color: lightgray;
 }
 
@@ -197,7 +209,7 @@ aside li {
     padding: 0.5rem;
 
     background-color: lightgray;
-    
+
     border: 1px solid gray;
     border-radius: 1rem;
 

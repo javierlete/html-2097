@@ -1,3 +1,20 @@
+/* VARIABLES */
+
+:root {
+    --tinta: black;
+    --fondo: white;
+    --enlace:  #357a95;
+    --suave: lightgray;
+    --medio: gray;
+
+    --letra: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --titulo: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    --espaciado: 0.5rem;
+
+    --sombra: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.452);
+}
+
 /* RESETEO */
 
 * {
@@ -5,18 +22,25 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--letra);
     margin: 0;
+
+    background-color: var(--fondo);
+    color: var(--tinta);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--titulo);
 }
 
 p {
-    line-height: 1.5rem;
+    line-height: calc(1rem + var(--espaciado));
 
     margin: 3rem 0;
 }
 
 a {
-    color: #357a95;
+    color: var(--enlace);
     text-decoration: none;
 }
 
@@ -25,14 +49,14 @@ a:hover {
 }
 
 main {
-    padding: 0.5rem;
+    padding: var(--espaciado);
 }
 
 pre {
     overflow: auto;
 
-    background-color: lightgray;
-    padding: 0.5rem;
+    background-color: var(--suave);
+    padding: var(--espaciado);
     border-radius: 0.25rem;
 }
 
@@ -92,8 +116,8 @@ video {
 h1,
 body>nav ul,
 footer {
-    background-color: black;
-    color: white;
+    background-color: var(--tinta);
+    color: var(--fondo);
 
     margin: 0;
     padding: 1rem;
@@ -108,35 +132,35 @@ body>nav ul {
 
 body>nav a {
     display: inline-block;
-    color: white;
+    color: var(--fondo);
 
-    padding: 0.5rem;
+    padding: var(--espaciado);
 
     width: 100%;
 }
 
 body>nav a:hover {
     text-decoration: none;
-    background-color: white;
-    color: black;
+    background-color: var(--fondo);
+    color: var(--tinta);
 }
 
 /* TABLAS */
 
 thead {
-    background-color: black;
-    color: white;
+    background-color: var(--tinta);
+    color: var(--fondo);
 }
 
 tr:nth-child(even) {
-    background-color: lightgray
+    background-color: var(--suave)
 }
 
 th,
 td {
-    border: 1px solid gray;
+    border: 1px solid var(--medio);
 
-    padding: 0.5rem;
+    padding: var(--espaciado);
 }
 
 th:first-child,
@@ -156,7 +180,7 @@ input,
 button,
 textarea,
 select {
-    border: 1px solid lightgray;
+    border: 1px solid var(--suave);
 
     border-radius: 0.25rem;
 
@@ -164,23 +188,23 @@ select {
 
     width: 100%;
 
-    margin: 0.5rem 0;
+    margin: var(--espaciado) 0;
 }
 
 fieldset {
-    padding: 0.5rem;
+    padding: var(--espaciado);
 }
 
 button,
 input[type=submit],
 input[type=reset] {
-    background-color: lightgray;
+    background-color: var(--suave);
 }
 
 /* ANUNCIOS */
 
 aside {
-    background-color: lightgray;
+    background-color: var(--suave);
 }
 
 aside ul {
@@ -206,12 +230,12 @@ aside li {
 
 #arriba a {
     display: inline-block;
-    padding: 0.5rem;
+    padding: var(--espaciado);
 
-    background-color: lightgray;
+    background-color: var(--suave);
 
-    border: 1px solid gray;
+    border: 1px solid var(--medio);
     border-radius: 1rem;
 
-    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.452);
+    box-shadow: var(--sombra);
 }

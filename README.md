@@ -17,7 +17,13 @@
 
 - Referencia: https://www.w3.org/TR/CSS/
 - CSS Zen Garden: https://csszengarden.com/
+- Tipos de letra de Google: https://fonts.google.com/
+- FontAwesome (iconos): https://fontawesome.com/
+- Chuleta Flex: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+- Chuleta Grid: https://css-tricks.com/snippets/css/complete-guide-grid/
 
 ## Ejercicios
 
 - CSS Dinner: https://flukeout.github.io/
+- Flexbox Froggy: https://flexboxfroggy.com/#es
+- Grid Garden: https://cssgridgarden.com/#es

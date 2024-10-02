@@ -1,6 +1,9 @@
 /* TIPOS DE LETRA */
 @import url(fonts.css);
 
+/* ICONOS */
+@import url(all.min.css); /* FontAwesome */
+
 /* VARIABLES */
 
 :root {
@@ -254,5 +257,18 @@ aside {
         border-radius: 1rem;
     
         box-shadow: var(--sombra);
+    }
+}
+
+#redes-sociales {
+    list-style: none;
+    padding: 0;
+
+    & li {
+        display: inline;
+
+        & a {
+            color: var(--fondo);
+        }
     }
 }

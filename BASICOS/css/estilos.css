@@ -2,7 +2,8 @@
 @import url(fonts.css);
 
 /* ICONOS */
-@import url(all.min.css); /* FontAwesome */
+@import url(all.min.css);
+/* FontAwesome */
 
 /* VARIABLES */
 
@@ -43,9 +44,15 @@ h4,
 h5,
 h6 {
     font-family: var(--titulo);
+    width: 100%;
 }
 
-pre, input[type=date], input[type=datetime-local], input[type=time], input[type=week], input[type=month] {
+pre,
+input[type=date],
+input[type=datetime-local],
+input[type=time],
+input[type=week],
+input[type=month] {
     font-family: var(--codigo);
 }
 
@@ -74,6 +81,10 @@ pre {
     background-color: var(--suave);
     padding: var(--espaciado);
     border-radius: 0.25rem;
+
+    font-size: 0.68rem;
+
+    width: 100%;
 }
 
 dt {
@@ -103,6 +114,8 @@ video {
 
     margin: 1rem 0;
 
+    width: 100%;
+
     &.p1x1 {
         padding-bottom: 100%;
     }
@@ -128,6 +141,21 @@ video {
 }
 
 /* TÍTULO, MENÚ PRINCIPAL Y PIE */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    &:before {
+        content: '<';
+    }
+
+    &:after {
+        content: '>';
+    }
+}
 
 h1,
 body>nav ul,
@@ -162,6 +190,20 @@ body>nav {
     }
 }
 
+/* LISTAS */
+
+#listas {
+    display: flex;
+    flex-wrap: wrap;
+
+    &>ul {
+        width: calc(1/3 * 100%);
+    }
+
+    &>ol {
+        width: calc(2/3 * 100%);
+    }
+}
 
 /* TABLAS */
 
@@ -194,6 +236,7 @@ table {
 /* FORMULARIOS */
 
 form {
+
     & fieldset,
     & input,
     & button,
@@ -229,10 +272,10 @@ aside {
     & ul {
         list-style: none;
         text-align: center;
-    
+
         padding: 0;
         margin: 0;
-        
+
         & li {
             padding: 0.25rem 0;
         }
@@ -246,16 +289,16 @@ aside {
 
     bottom: 1rem;
     right: 1rem;
-    
+
     & a {
         display: inline-block;
         padding: var(--espaciado);
-    
+
         background-color: var(--suave);
-    
+
         border: 1px solid var(--medio);
         border-radius: 1rem;
-    
+
         box-shadow: var(--sombra);
     }
 }
@@ -269,6 +312,174 @@ aside {
 
         & a {
             color: var(--fondo);
+        }
+    }
+}
+
+@media (min-width: 375px) {
+    pre {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 425px) {
+    pre {
+        font-size: 0.93rem;
+    }
+}
+
+@media (min-width: 768px) {
+    body>nav {
+        position: sticky;
+        top: 0;
+        z-index: 10000;
+
+        & ul {
+            display: flex;
+        }
+    }
+
+    #parrafos {
+        display: flex;
+        flex-wrap: wrap;
+
+        p {
+            width: 50%;
+            padding: 0 1rem;
+        }
+
+        pre {
+            font-size: 1rem;
+
+            padding-left: 28%;
+        }
+    }
+
+    #listas {
+        justify-content: space-between;
+
+        &>ul,
+        &>ol,
+        &>dl {
+            width: auto;
+        }
+    }
+
+    #formularios {
+        display: flex;
+        flex-wrap: wrap;
+        gap: calc(var(--espaciado) * 2);
+
+        &>form {
+
+            &:first-of-type,
+            &:nth-of-type(2) {
+                width: calc(50% - var(--espaciado));
+            }
+
+            &:last-of-type {
+                display: flex;
+                gap: calc(var(--espaciado) * 2);
+
+                &>fieldset {
+                    width: calc(50% - var(--espaciado));
+                }
+            }
+        }
+    }
+
+    aside ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    body>footer {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+
+        &>p,
+        &>ul {
+            margin: 0;
+        }
+    }
+
+    #arriba {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    #html {
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: calc(var(--espaciado) * 2);
+    }
+
+    #parrafos {
+        align-items: center;
+
+        &>p {
+            width: 25%;
+        }
+
+        &>pre {
+            width: 50%;
+            padding: var(--espaciado);
+        }
+    }
+
+    #listas {
+        width: calc(70% - var(--espaciado));
+    }
+
+    #tablas {
+        width: calc(30% - var(--espaciado));
+    }
+
+    #multimedia {
+        display: flex;
+        flex-wrap: wrap;
+        gap: calc(var(--espaciado) * 2);
+
+        &>:not(h3, audio, #youtube) {
+            width: calc(50% - var(--espaciado));
+        }
+
+        &>h3 {
+            order: -2;
+        }
+
+        &>audio {
+            order: -1;
+        }
+
+        #mapa, #spotify {
+            padding-bottom: 527px;
+        }
+    }
+
+    #formularios {
+        display: grid;
+
+        grid-template-columns: 1fr 2fr;
+
+        &>form {
+            width: auto !important;
+        }
+
+        &>h3 {
+            grid-column: span 2;
+        }
+
+        &>form:nth-of-type(2) {
+            grid-column-start: 1;
+            grid-row-start: 3;
+        }
+
+        &>form:last-of-type {
+            grid-row: span 3;
         }
     }
 }

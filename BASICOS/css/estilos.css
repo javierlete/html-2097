@@ -75,6 +75,10 @@ main {
     padding: var(--espaciado);
 }
 
+section {
+    width: 100%;
+}
+
 pre {
     overflow: auto;
 
@@ -455,7 +459,8 @@ aside {
             order: -1;
         }
 
-        #mapa, #spotify {
+        #mapa,
+        #spotify {
             padding-bottom: 527px;
         }
     }
@@ -481,5 +486,110 @@ aside {
         &>form:last-of-type {
             grid-row: span 3;
         }
+    }
+}
+
+@media (min-width: 1440px) {
+    #html {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: calc(var(--espaciado) * 2);
+
+        align-items: start;
+
+        grid-template-areas:
+            "titulo         titulo"
+            "parrafos       parrafos"
+            "formularios    multimedia"
+            "listas         multimedia"
+            "tablas         multimedia"
+    }
+
+    h2 {
+        grid-area: titulo;
+    }
+
+    #parrafos {
+        grid-area: parrafos;
+    }
+
+    #listas {
+        grid-area: listas;
+    }
+
+    #tablas {
+        grid-area: tablas;
+    }
+
+    #multimedia {
+        grid-area: multimedia;
+    }
+
+    #formularios {
+        grid-area: formularios;
+    }
+
+    #multimedia {
+
+        #mapa,
+        #spotify {
+            padding-bottom: 200px;
+        }
+    }
+
+    #tablas,
+    #listas {
+        width: 100%;
+    }
+}
+
+@media (min-width: 2560px) {
+    body {
+        display: grid;
+
+        grid-template-columns: 1fr auto;
+
+        grid-template-areas:
+            "titulo-principal titulo-principal"
+            "menu menu"
+            "principal anuncios"
+            "pie pie";
+    }
+
+    h1 {
+        grid-area: titulo-principal;
+    }
+
+    body>nav {
+        grid-area: menu;
+    }
+
+    main {
+        grid-area: principal;
+    }
+
+    aside {
+        padding: var(--espaciado);
+
+        grid-area: anuncios;
+
+        & ul {
+            flex-direction: column;
+        }
+    }
+
+    body>footer {
+        grid-area: pie;
+    }
+
+    #html {
+        grid-template-columns: 1fr 1fr 2fr;
+
+        grid-template-areas:
+            "titulo         titulo         titulo"
+            "parrafos       parrafos       multimedia"
+            "formularios    formularios    multimedia"
+            "listas         tablas         multimedia"
+            ".              .              multimedia";
     }
 }

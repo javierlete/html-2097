@@ -21,9 +21,16 @@
 - FontAwesome (iconos): https://fontawesome.com/
 - Chuleta Flex: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 - Chuleta Grid: https://css-tricks.com/snippets/css/complete-guide-grid/
+- Diapositivas de HTML5/CSS3/JS: https://javierlete.github.io/slides.html5rocks.com/html5.html#landing-slide
+
 
 ## Ejercicios
 
 - CSS Dinner: https://flukeout.github.io/
 - Flexbox Froggy: https://flexboxfroggy.com/#es
 - Grid Garden: https://cssgridgarden.com/#es
+
+# Accesibilidad
+
+- Video de ciego explicando cómo navega: https://www.youtube.com/watch?v=Iw4vXFDniZs
+- Lector de pantalla NVDA: https://nvda.es/

@@ -65,9 +65,13 @@ p {
 a {
     color: var(--enlace);
     text-decoration: none;
+    
+    transition: font-size 2s ease-in-out;
 
     &:hover {
         text-decoration: underline;
+
+        font-size: 120%;
     }
 }
 
@@ -174,10 +178,13 @@ footer {
 }
 
 body>nav {
+    
     & ul {
         list-style: none;
-
+        
         & a {
+            transition: all .5s;
+
             display: inline-block;
             color: var(--fondo);
 
@@ -189,6 +196,8 @@ body>nav {
                 text-decoration: none;
                 background-color: var(--fondo);
                 color: var(--tinta);
+
+                font-size: 100%;
             }
         }
     }

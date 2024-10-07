@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <h1>Ejemplo HTML</h1>
+
+    <nav>
+        <ul>
+            <li><a href="#parrafos">Párrafos</a></li>
+            <li><a href="#listas">Listas</a></li>
+            <li><a href="#tablas">Tablas</a></li>
+            <li><a href="#multimedia">Multimedia</a></li>
+            <li><a href="#formularios">Formularios</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article id="html">
+            <h2>HTML</HTML></h2>
+
+            <section id="parrafos">
+                <h3>Párrafos</h3>
+
+                <p><strong>Lorem</strong> <em>ipsum</em> dolor sit amet consectetur adipisicing elit. Fuga nisi
+                    voluptatum neque debitis omnis
+                    perferendis deserunt explicabo, voluptatibus, porro consequatur aliquid illo. Iure id commodi
+                    expedita sapiente voluptatem. Quaerat, eum?</p>
+                <p>Perferendis quas, dolor modi alias cum asperiores, aliquid vitae iste aperiam voluptatum debitis
+                    dolorem dolore a veritatis omnis sunt expedita, accusantium possimus quidem amet temporibus
+                    accusamus inventore illum! Consequatur, molestias!</p>
+
+                <pre>
+public class Hola {
+    public static void main(String[] args) {
+        System.out.println("Hola"); 
+    } 
+}
+</pre>
+            </section>
+
+            <section id="listas">
+                <h3>Listas</h3>
+
+                <ul>
+                    <li>Uno</li>
+                    <li>Dos</li>
+                    <li>Tres</li>
+                </ul>
+
+                <ol>
+                    <li>Monitor</li>
+                    <li>CPU
+                        <ol>
+                            <li>Gráfica</li>
+                            <li>Placa base</li>
+                        </ol>
+                    </li>
+                    <li>Ratón</li>
+                    <li>Teclado</li>
+                </ol>
+
+                <dl>
+                    <dt>HTML</dt>
+                    <dd>Hyper Text Markup Language</dd>
+                    <dt>CSS</dt>
+                    <dd>Cascade Style Sheets</dd>
+                </dl>
+            </section>
+
+            <section id="tablas">
+                <h3>Tablas</h3>
+
+                <table>
+                    <caption>Tabla de ejemplo</caption>
+
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <td>Javier</td>
+                            <td>Lete</td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <td>Pepe</td>
+                            <td>Pérez</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="multimedia">
+                <h3>Multimedia</h3>
+
+                <!-- <img src="https://picsum.photos/400/300" alt="Imagen de ejemplo"> -->
+                <img src="imgs/html.jpg" alt="Código de ejemplo de HTML">
+
+                <audio src="audios/rock.mp3" controls></audio>
+
+                <video src="videos/rock.mp4" controls></video>
+
+                <div id="mapa" class="proporcion p1x1">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.762268580204!2d-2.916166924305552!3d43.2564039711237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e4fb46238d865%3A0xb671edfb1120ab06!2sIpartek%20Servicios%20Inform%C3%A1ticos!5e0!3m2!1ses-419!2ses!4v1727684047787!5m2!1ses-419!2ses"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div id="spotify" class="proporcion p4x3">
+                    <iframe src="https://open.spotify.com/embed/album/32NQ56VZDTXSH3SMv4XSGN?utm_source=generator"
+                        allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"></iframe>
+                </div>
+                <div id="youtube" class="proporcion p16x9">
+                    <iframe src="https://www.youtube.com/embed/s4KEUsnaCoE?si=qGlY6w0RPO0uswcW"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section id="formularios">
+                <h3>Formularios</h3>
+
+                <form action="#">
+                    <fieldset>
+                        <legend>Formulario de login</legend>
+                        <div>
+                            <label for="correo">Usuario</label>
+                            <input type="email" id="correo">
+                        </div>
+                        <div>
+                            <label for="contra">Contraseña</label>
+                            <input type="password" id="contra">
+                        </div>
+                        <div>
+                            <button>Login</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <form action="https://www.google.es/search">
+                    <fieldset>
+                        <legend>Buscar en Google</legend>
+
+                        <input type="search" name="q" placeholder="Término a buscar">
+
+                        <button>Buscar</button>
+                    </fieldset>
+                </form>
+
+                <form action="#">
+                    <fieldset>
+                        <legend>Básicos</legend>
+
+                        <input type="text" placeholder="Texto">
+
+                        <input type="checkbox">
+
+                        <input type="radio" name="opcion">
+                        <input type="radio" name="opcion">
+
+                        <select>
+                            <option value="1">Uno</option>
+                            <option value="2">Dos</option>
+                            <option value="3">Tres</option>
+                        </select>
+
+                        <select multiple>
+                            <option value="1">Uno</option>
+                            <option value="2">Dos</option>
+                            <option value="3">Tres</option>
+                        </select>
+
+                        <textarea></textarea>
+
+                        <input type="submit">
+                        <input type="reset">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>HTML5</legend>
+
+                        <input type="email" placeholder="Email">
+                        <input type="tel" placeholder="Teléfono">
+                        <input type="url" placeholder="URL">
+                        <input type="number" placeholder="Número">
+                        <input type="number" step=".01" min="0" placeholder="Número con decimales">
+                        <input type="date">
+                        <input type="time">
+                        <input type="datetime-local">
+                        <input type="color">
+                        <input type="range" min="1" max="5">
+                        <input type="week">
+                        <input type="month">
+
+                        <button>Enviar</button>
+                    </fieldset>
+                </form>
+            </section>
+        </article>
+    </main>
+
+    <aside>
+        <!-- nav>ul>li*3>a[href="#"]>{Anuncio $} -->
+        <nav>
+            <ul>
+                <li><a href="https://www.google.es">Google</a></li>
+                <li><a href="https://copilot.microsoft.com">Copilot</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <footer>
+        <p>&copy;2024 Javier Lete</p>
+
+        <ul id="redes-sociales">
+            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+        </ul>
+
+        <div id="arriba">
+            <a href="#">Arriba</a>
+        </div>
+    </footer>
+
+    <script src="js/input-month-polyfill.min.js"></script>
+</body>
+
+</html>

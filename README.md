@@ -34,3 +34,7 @@
 
 - Video de ciego explicando cómo navega: https://www.youtube.com/watch?v=Iw4vXFDniZs
 - Lector de pantalla NVDA: https://nvda.es/
+
+# Bootstrap
+
+- Documentación de Bootstrap: https://getbootstrap.com/docs/5.3/layout/breakpoints/

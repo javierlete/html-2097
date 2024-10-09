@@ -6,12 +6,22 @@ console.log(inputsPassword);
 
 for (const inputPassword of inputsPassword) {
     console.log(inputPassword);
-    
+
     inputPassword.placeholder = 'Pulsa botón para ver password';
-    const boton = inputPassword.nextElementSibling;
-    
+    const boton = document.createElement('button');
+    boton.className = 'btn border border-start-0';
+    boton.type = 'button';
+
+    boton.innerHTML = '<i class="bi bi-eye"></i>';
+
     console.log(boton);
-    
+
+    inputPassword.classList.add('border-end-0');
+    inputPassword.parentElement.classList.add('input-group');
+
+    inputPassword.after(boton);
+
+
     boton.addEventListener('click', mostrarOcultarPassword);
 }
 

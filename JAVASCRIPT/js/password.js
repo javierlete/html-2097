@@ -9,10 +9,8 @@ for (const inputPassword of inputsPassword) {
 
     inputPassword.placeholder = 'Pulsa botón para ver password';
     const boton = document.createElement('button');
-    boton.className = 'btn border border-start-0';
+    boton.className = 'btn border border-start-0 bi bi-eye';
     boton.type = 'button';
-
-    boton.innerHTML = '<i class="bi bi-eye"></i>';
 
     console.log(boton);
 
@@ -21,17 +19,16 @@ for (const inputPassword of inputsPassword) {
 
     inputPassword.after(boton);
 
-
     boton.addEventListener('click', mostrarOcultarPassword);
 }
 
 function mostrarOcultarPassword(evento) {
     console.log('CLICK');
 
-    const icono = evento.target;
-    const inputPassword = icono.parentNode.previousElementSibling;
+    const boton = evento.target;
+    const inputPassword = boton.previousElementSibling;
 
-    console.log(icono);
+    console.log(boton);
     console.log(inputPassword);
 
     console.log(inputPassword.type);
@@ -39,10 +36,10 @@ function mostrarOcultarPassword(evento) {
     if (inputPassword.type === 'password') {
         inputPassword.type = 'text';
 
-        icono.className = 'bi bi-eye-slash';
+        boton.classList.replace('bi-eye', 'bi-eye-slash');
     } else {
         inputPassword.type = 'password';
-
-        icono.className = 'bi bi-eye';
+        
+        boton.classList.replace('bi-eye-slash', 'bi-eye');
     }
 }

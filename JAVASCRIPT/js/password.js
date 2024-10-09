@@ -1,19 +1,28 @@
 'use strict';
 
-const boton = document.querySelector('button');
-const inputPassword = document.querySelector('input[type=password]');
-const icono = boton.children[0];
+const inputsPassword = document.querySelectorAll('input[type=password]');
 
-console.log(boton);
-console.log(inputPassword);
-console.log(icono);
+console.log(inputsPassword);
 
-inputPassword.placeholder = 'Pulsa botón para ver password';
+for (const inputPassword of inputsPassword) {
+    console.log(inputPassword);
+    
+    inputPassword.placeholder = 'Pulsa botón para ver password';
+    const boton = inputPassword.nextElementSibling;
+    
+    console.log(boton);
+    
+    boton.addEventListener('click', mostrarOcultarPassword);
+}
 
-boton.addEventListener('click', mostrarOcultarPassword);
-
-function mostrarOcultarPassword() {
+function mostrarOcultarPassword(evento) {
     console.log('CLICK');
+
+    const icono = evento.target;
+    const inputPassword = icono.parentNode.previousElementSibling;
+
+    console.log(icono);
+    console.log(inputPassword);
 
     console.log(inputPassword.type);
 
@@ -23,7 +32,7 @@ function mostrarOcultarPassword() {
         icono.className = 'bi bi-eye-slash';
     } else {
         inputPassword.type = 'password';
-        
+
         icono.className = 'bi bi-eye';
     }
 }

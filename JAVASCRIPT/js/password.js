@@ -8,14 +8,20 @@ console.log(input);
 
 input.placeholder = 'Pulsa botón para ver password';
 
-boton.addEventListener('click', mostrarPassword);
+boton.addEventListener('click', mostrarOcultarPassword);
 
-function mostrarPassword() {
+function mostrarOcultarPassword() {
     console.log('CLICK');
 
     console.log(input.type);
 
-    input.type = 'text';
+    if (input.type === 'password') {
+        input.type = 'text';
 
-    boton.style.display = 'none';
+        boton.innerText = 'Ocultar contraseña';
+    } else {
+        input.type = 'password';
+
+        boton.innerText = 'Mostrar contraseña';
+    }
 }

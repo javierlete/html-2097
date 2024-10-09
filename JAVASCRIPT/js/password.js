@@ -16,4 +16,6 @@ function mostrarPassword() {
     console.log(input.type);
 
     input.type = 'text';
+
+    boton.style.display = 'none';
 }

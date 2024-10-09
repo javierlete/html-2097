@@ -2,9 +2,11 @@
 
 const boton = document.querySelector('button');
 const input = document.querySelector('input');
+const icono = boton.children[0];
 
 console.log(boton);
 console.log(input);
+console.log(icono);
 
 input.placeholder = 'Pulsa botón para ver password';
 
@@ -18,10 +20,10 @@ function mostrarOcultarPassword() {
     if (input.type === 'password') {
         input.type = 'text';
 
-        boton.innerText = 'Ocultar contraseña';
+        icono.className = 'bi bi-eye-slash';
     } else {
         input.type = 'password';
-
-        boton.innerText = 'Mostrar contraseña';
+        
+        icono.className = 'bi bi-eye';
     }
 }

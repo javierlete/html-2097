@@ -5,6 +5,7 @@
 # General
 
 - FreeCodeCamp: https://www.freecodecamp.org/espanol/
+- Mozilla Development Network: https://developer.mozilla.org/es/docs/Learn
 
 # HTML
 
@@ -38,3 +39,9 @@
 # Bootstrap
 
 - Documentación de Bootstrap: https://getbootstrap.com/docs/5.3/layout/breakpoints/
+
+# JavaScript
+
+- Tutorial de JavaScript: https://es.javascript.info/
+- FreeCodeCamp certificación de JavaScript: https://www.freecodecamp.org/espanol/learn/javascript-algorithms-and-data-structures-v8/
+- Uniwebsidad JavaScript: https://uniwebsidad.com/libros/javascript

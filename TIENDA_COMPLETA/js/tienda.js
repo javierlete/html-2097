@@ -43,6 +43,24 @@ function ficha(id) {
     document.querySelector('#precio').innerText = producto.precio;
 }
 
+function admin() {
+    mostrar('admin');
+
+    for(const producto of productos) {
+        const tr = document.createElement('tr');
+
+        tr.innerHTML = `
+            <th class="text-end">${producto.id}</th>
+            <td>${producto.nombre}</td>
+            <td class="text-end">${producto.precio} €</td>
+            <td><a href="formulario.html" class="btn btn-sm btn-primary">Editar</a><a href="#"
+                    class="btn btn-danger btn-sm">Borrar</a></td>
+        `;
+
+        document.querySelector('#admin tbody').appendChild(tr);
+    }
+}
+
 function mostrar(seccion) {
     const secciones = document.querySelectorAll('section');
 

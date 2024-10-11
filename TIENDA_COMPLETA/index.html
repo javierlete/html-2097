@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-xl-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Principal</a>
+                        <a class="nav-link active" aria-current="page" href="javascript:mostrar('listado')">Principal</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Electrónica</a>
@@ -52,7 +52,7 @@
                 </form>
                 <ul class="navbar-nav ms-auto mb-2 mb-sm-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="admin.html">Administración</a>
+                        <a class="nav-link" href="javascript:admin()">Administración</a>
                     </li>
                     <li class="navbar-text">
                         Javier
@@ -90,6 +90,31 @@
             <div>
                 <a href="javascript:mostrar('listado')" class="btn btn-primary">Volver</a>
             </div>
+        </section>
+
+        <section id="admin">
+            <table class="table table-hover table-striped table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="text-end">Id</th>
+                        <th>Nombre</th>
+                        <th class="text-end">Precio</th>
+                        <th>OPCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot class="table-dark">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <a href="formulario.html" class="btn btn-sm btn-primary">Añadir</a>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
         </section>
     </main>
 

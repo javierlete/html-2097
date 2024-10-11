@@ -1,22 +1,24 @@
-[
-    {
-        "id": 1,
-        "nombre": "Portátil",
-        "precio": 1234.56
-    },
-    {
-        "id": 2,
-        "nombre": "Ratón",
-        "precio": 34.56
-    },
-    {
-        "id": 3,
-        "nombre": "Teclado",
-        "precio": 234.56
-    },
-    {
-        "id": 4,
-        "nombre": "Sobremesa",
-        "precio": 2234.56
-    }
-]
+{
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "Portátil",
+            "precio": 1234.56
+        },
+        {
+            "id": 2,
+            "nombre": "Ratón",
+            "precio": 34.56
+        },
+        {
+            "id": 3,
+            "nombre": "Teclado",
+            "precio": 234.56
+        },
+        {
+            "id": 4,
+            "nombre": "Sobremesa",
+            "precio": 2234.56
+        }
+    ]
+}

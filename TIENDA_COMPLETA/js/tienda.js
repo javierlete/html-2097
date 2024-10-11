@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 async function listado() {
     mostrar('listado');
 
-    const respuesta = await fetch('json/tienda.json');
+    const respuesta = await fetch('http://localhost:3000/productos');
     productos = await respuesta.json();
 
     console.log(productos);

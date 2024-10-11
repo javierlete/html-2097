@@ -1,6 +1,6 @@
 'use strict';
 
-let productos;
+const URL = 'http://localhost:3000/productos/';
 
 window.addEventListener('DOMContentLoaded', async () => {
     listado();
@@ -9,8 +9,8 @@ window.addEventListener('DOMContentLoaded', async () => {
 async function listado() {
     mostrar('listado');
 
-    const respuesta = await fetch('http://localhost:3000/productos');
-    productos = await respuesta.json();
+    const respuesta = await fetch(URL);
+    const productos = await respuesta.json();
 
     console.log(productos);
 
@@ -39,18 +39,20 @@ async function listado() {
     }
 }
 
-function ficha(id) {
-    mostrar('ficha');
-
-    const producto = productos.filter(p => p.id === id)[0];
+async function ficha(id) {
+    const respuesta = await fetch(URL + id);
+    const producto = await respuesta.json();
 
     document.querySelector('#foto').src = `fotos/${producto.id}.jpg`;
     document.querySelector('#nombre').innerText = producto.nombre;
     document.querySelector('#precio').innerText = producto.precio;
+
+    mostrar('ficha');
 }
 
-function admin() {
-    mostrar('admin');
+async function admin() {
+    const respuesta = await fetch(URL);
+    const productos = await respuesta.json();
 
     const tbody = document.querySelector('#admin tbody');
 
@@ -60,12 +62,12 @@ function admin() {
         const tr = document.createElement('tr');
 
         tr.innerHTML = `
-            <th class="text-end">${producto.id}</th>
+        <th class="text-end">${producto.id}</th>
             <td>${producto.nombre}</td>
             <td class="text-end">${producto.precio} €</td>
-            <td><a href="javascript:formulario(${producto.id})" class="btn btn-sm btn-primary">Editar</a><a href="#"
-                    class="btn btn-danger btn-sm">Borrar</a></td>
-        `;
+            <td><a href="javascript:formulario(${producto.id})" class="btn btn-sm btn-primary">Editar</a><a href="javascript:borrar(${producto.id})"
+            class="btn btn-danger btn-sm">Borrar</a></td>
+            `;
 
         tbody.appendChild(tr);
     }
@@ -76,15 +78,16 @@ function admin() {
             url: 'json/dataTables_es-ES.json'
         }
     });
+
+    mostrar('admin');
 }
 
-function formulario(id) {
-    mostrar('formulario');
-
+async function formulario(id) {
     const form = document.querySelector('#formulario form');
 
     if (id) {
-        const producto = productos.filter(p => p.id === id)[0];
+        const respuesta = await fetch(URL + id);
+        const producto = await respuesta.json();
 
         form.idProducto.value = producto.id;
         form.nombre.value = producto.nombre;
@@ -92,6 +95,14 @@ function formulario(id) {
     } else {
         form.reset();
     }
+
+    mostrar('formulario');
+}
+
+async function borrar(id) {
+    const respuesta = await fetch(URL + id, { method: 'DELETE' });
+
+    admin();
 }
 
 function mostrar(seccion) {
@@ -106,7 +117,7 @@ function mostrar(seccion) {
     capa.style.display = 'block';
 }
 
-function guardar() {
+async function guardar() {
     const form = document.querySelector('#formulario form');
 
     console.log(form);
@@ -114,11 +125,29 @@ function guardar() {
     if (form.checkValidity()) {
         const producto = { nombre: form.nombre.value, precio: +form.precio.value };
 
-        if(form.idProducto.value) {
+        if (form.idProducto.value) {
             producto.id = +form.idProducto.value;
         }
 
         console.log(producto);
+
+        if (producto.id) {
+            const respuesta = await fetch(URL + producto.id, {
+                method: 'PUT',
+                body: JSON.stringify(producto),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+        } else {
+            const respuesta = await fetch(URL, {
+                method: 'POST',
+                body: JSON.stringify(producto),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+        }
 
         admin();
     } else {

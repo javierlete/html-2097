@@ -3,14 +3,20 @@
 let productos;
 
 window.addEventListener('DOMContentLoaded', async () => {
-    const respuesta = await fetch('json/tienda.json');
-    productos = await respuesta.json();
-    
-    console.log(productos);
+    listado();
+});
 
+async function listado() {
     mostrar('listado');
 
+    const respuesta = await fetch('json/tienda.json');
+    productos = await respuesta.json();
+
+    console.log(productos);
+
     const divListado = document.querySelector('#listado>div');
+
+    divListado.innerHTML = '';
 
     for (const producto of productos) {
         const div = document.createElement('div');
@@ -31,7 +37,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         divListado.appendChild(div);
     }
-});
+}
 
 function ficha(id) {
     mostrar('ficha');
@@ -46,18 +52,36 @@ function ficha(id) {
 function admin() {
     mostrar('admin');
 
-    for(const producto of productos) {
+    const tbody = document.querySelector('#admin tbody');
+
+    tbody.innerHTML = '';
+
+    for (const producto of productos) {
         const tr = document.createElement('tr');
 
         tr.innerHTML = `
             <th class="text-end">${producto.id}</th>
             <td>${producto.nombre}</td>
             <td class="text-end">${producto.precio} €</td>
-            <td><a href="formulario.html" class="btn btn-sm btn-primary">Editar</a><a href="#"
+            <td><a href="javascript:formulario(${producto.id})" class="btn btn-sm btn-primary">Editar</a><a href="#"
                     class="btn btn-danger btn-sm">Borrar</a></td>
         `;
 
-        document.querySelector('#admin tbody').appendChild(tr);
+        tbody.appendChild(tr);
+    }
+}
+
+function formulario(id) {
+    mostrar('formulario');
+
+    if (id) {
+        const producto = productos.filter(p => p.id === id)[0];
+
+        const form = document.querySelector('#formulario form');
+
+        form.idProducto.value = producto.id;
+        form.nombre.value = producto.nombre;
+        form.precio.value = producto.precio;
     }
 }
 

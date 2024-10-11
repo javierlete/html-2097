@@ -74,14 +74,16 @@ function admin() {
 function formulario(id) {
     mostrar('formulario');
 
+    const form = document.querySelector('#formulario form');
+
     if (id) {
         const producto = productos.filter(p => p.id === id)[0];
-
-        const form = document.querySelector('#formulario form');
 
         form.idProducto.value = producto.id;
         form.nombre.value = producto.nombre;
         form.precio.value = producto.precio;
+    } else {
+        form.reset();
     }
 }
 
@@ -95,4 +97,24 @@ function mostrar(seccion) {
     const capa = document.querySelector('#' + seccion);
 
     capa.style.display = 'block';
+}
+
+function guardar() {
+    const form = document.querySelector('#formulario form');
+
+    console.log(form);
+
+    if (form.checkValidity()) {
+        const producto = { nombre: form.nombre.value, precio: +form.precio.value };
+
+        if(form.idProducto.value) {
+            producto.id = +form.idProducto.value;
+        }
+
+        console.log(producto);
+
+        admin();
+    } else {
+        form.classList.add('was-validated');
+    }
 }

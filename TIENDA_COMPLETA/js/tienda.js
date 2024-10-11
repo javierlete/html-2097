@@ -24,7 +24,7 @@ async function listado() {
 
         div.innerHTML = `
             <div class="card h-100">
-                <img src="https://picsum.photos/400/300?${producto.id}" class="card-img-top" alt="...">
+                <img src="fotos/${producto.id}.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${producto.nombre}</h5>
                     <p class="card-text text-end fw-bold">${producto.precio} €</p>
@@ -44,7 +44,7 @@ function ficha(id) {
 
     const producto = productos.filter(p => p.id === id)[0];
 
-    document.querySelector('#foto').src = 'https://picsum.photos/400/300?' + producto.id;
+    document.querySelector('#foto').src = `fotos/${producto.id}.jpg`;
     document.querySelector('#nombre').innerText = producto.nombre;
     document.querySelector('#precio').innerText = producto.precio;
 }

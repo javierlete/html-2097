@@ -69,6 +69,13 @@ function admin() {
 
         tbody.appendChild(tr);
     }
+
+    new DataTable('#admin table', {
+        retrieve: true,
+        language: {
+            url: 'json/dataTables_es-ES.json'
+        }
+    });
 }
 
 function formulario(id) {
